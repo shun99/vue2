@@ -35,6 +35,7 @@
         </tr>
         </thead>
         <tbody>
+        <!--注意，在vue2.0中要获取当前数组的位置，定义如下-->
         <tr v-for="(people, index) in peopleList">
             <td>{{ people.name}}</td>
             <td>{{ people.age}}</td>
