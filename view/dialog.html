@@ -11,7 +11,7 @@
 
 <body>
 <div id="app">
-    <modal-dialog v-bind:show.sync="parent">
+    <modal-dialog v-bind:show="showDialog" v-on:close="closeDialog">
 
         <header class="dialog-header" slot="header">
             <h1 class="dialog-title">提示信息</h1>
@@ -46,6 +46,23 @@
     </div>
 </template>
 
+<!--
+如下，当直接在自组件操作父组件的数据时，会有警告提示
+Vue.component('modal-dialog', {
+        props: ['show'],
+        template: '#dialog-template',
+        methods: {
+            close: function () {
+                this.show = false;
+                this.$emit('close')
+            }
+        }
+    });
+
+Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "show"
+(found in component <modal-dialog>)
+建议在父组件定义接口，在此修改数据，子组件会自动相应相关变化。
+-->
 
 <script>
     Vue.component('modal-dialog', {
@@ -53,7 +70,7 @@
         template: '#dialog-template',
         methods: {
             close: function () {
-                this.show = false;
+                this.$emit('close')
             }
         }
     });
@@ -61,14 +78,14 @@
     new Vue({
         el: '#app',
         data: {
-            parent: false
+            showDialog: false
         },
         methods: {
             closeDialog: function () {
-                this.parent = false;
+                this.showDialog = false;
             },
             openDialog: function () {
-                this.parent = true;
+                this.showDialog = true;
             }
         }
     });
