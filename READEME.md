@@ -37,7 +37,7 @@
 使用子组件时通过
 v-on:自组件方法="父组件方法"     指定子组件要调用父组件的什么方法。
 
-v-bind:自组件数据="父组件数据"   将子组件数据与父组件数据建立连接
+v-bind:自组件数据="父组件数据"   将子组件数据与父组件数据建立连接。
 ```
  <div id="app">
      <modal-dialog v-bind:show="showDialog" v-on:close="closeDialog">
@@ -47,3 +47,5 @@ v-bind:自组件数据="父组件数据"   将子组件数据与父组件数据�
  </div>
 ```
 **不要再子组件修改父组件的数据，而是通过父组件的方法修改，修改后子组件会自动响应**
+
+[vue组件教程](http://www.cnblogs.com/keepfool/p/5637834.html)
