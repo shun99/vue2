@@ -1,0 +1,296 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <script src="../static/js/vue.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <div class="m-nav-login show_login_dialog"><a href="#">登入</a></div>
+    <div class="m-nva-title">这是标题</div>
+</nav>
+<!--第一个component-->
+<div id="app-1">
+    <component-1></component-1>
+</div>
+<script>
+    Vue.component('component-1', {
+        template: '<span>This is First component</span>'
+    });
+    new Vue({
+        el: '#app-1'
+    });
+</script>
+<div id="app-2">
+    <component-2></component-2>
+</div>
+<template id="template-2">
+    <span>This is template-2</span>
+</template>
+<script>
+    Vue.component('component-2', {
+        template: '#template-2'
+    });
+    new Vue({
+        el: '#app-2'
+    });
+</script>
+<!--局部注册-->
+<div id="app-3">
+    <jubu-component></jubu-component>
+</div>
+
+<!--
+jubu-component在app-3注册，是局部注册，不能再app-3之外使用，否则报错
+[Vue warn]: Unknown custom element: <jubu-1> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+(found in root instance)
+-->
+<!--<div id="app-4">-->
+<!--<jubu-component></jubu-component>-->
+<!--</div>-->
+
+<script>
+    new Vue({
+        el: '#app-3',
+        components: {
+            'jubu-component': {template: '<span>this is jubu component</span>'}
+        }
+    });
+    //    new Vue({
+    //        el: '#app-4'
+    //    });
+</script>
+
+<template id="parent_component-1-template">
+    <div>
+        <span>this is parent_component-1-template</span><br/>
+        <child-component-1></child-component-1>
+    </div>
+</template>
+<template id="child_component-1-template">
+    <span>this is child_component-1-template</span>
+</template>
+
+<!--
+父组件中注册的组件不能再外部手动调用，只能在注册父组件的时候使用
+//方式一，
+ <parent-component-1><child-component-1></child-component-1></parent-component-1>
+ 子组件不生效，没效果
+//方式二，
+ <parent-component-1></parent-component-1>
+ <child-component-1></child-component-1>
+
+报如下错误
+[Vue warn]: Unknown custom element: <child-component-1> - did you register the component correctly? For recursive components, make sure to provide the "name" option.
+(found in root instance)
+</
+
+-->
+
+<div id="app-5">
+    <parent-component-1>
+    </parent-component-1>
+</div>
+
+<!--<p>在组件中定义并使用其他组件，这就构成了父子组件的关系</p>-->
+<script>
+    Vue.component('parent-component-1', {
+        template: '#parent_component-1-template',
+        components: {
+            'child-component-1': {
+                template: '#child_component-1-template'
+            }
+        }
+    });
+
+    new Vue({
+        el: '#app-5'
+    });
+
+</script>
+<div id="app-6">
+
+</div>
+
+<!--
+在子组件中定义prop时，使用了camelCase命名法。由于HTML特性不区分大小写，
+camelCase的prop用于特性时，需要转为 kebab-case（短横线隔开）。
+例如，在prop中定义的myName，在用作特性时需要转换为my-name。
+
+[Vue warn]: Property or method "table" is not defined on the instance but referenced during render. Make sure to declare reactive data properties in the data option.
+(found in component <tab-component>)-->
+<template id="tab-template">
+    <div>
+        <table>
+            <tr>
+                <th colspan="2">子组件数据</th>
+            </tr>
+            <tr>
+                <!--不能使用{{table-name}}-->
+                <td>my name</td>
+                <td>{{tableName}}</td>
+            </tr>
+            <tr>
+                <td>my age</td>
+                <td>{{tableAge}}</td>
+            </tr>
+        </table>
+    </div>
+</template>
+
+
+<div id="app-7">
+    <tab-component v-bind:table-name="name" v-bind:table-age="age"></tab-component>
+</div>
+<script>
+    new Vue({
+        el: '#app-7',
+        data: {
+            name: 'shun',
+            age: 23
+        },
+        components: {
+            'tab-component': {
+                props: ['tableName', 'tableAge'],
+                template: '#tab-template'
+            }
+        }
+    });
+</script>
+<!--子组件与父组件的相互影响。-->
+<!--
+父组件是使用 props 传递数据给子组件，  单向绑定，父组件对子组件的影响
+当直接修改子组件的时候提示如下
+[Vue warn]: Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "myAge"
+(found in component <tab-component-2>)
+-->
+
+<div id="app-8">
+    <table>
+        <tr>
+            <th colspan="3">子组件数据</th>
+        </tr>
+        <tr>
+            <td>my name</td>
+            <td>{{ name }}</td>
+            <td><input type="text" v-model="name"/></td>
+        </tr>
+        <tr>
+            <td>my age</td>
+            <td>{{ age }}</td>
+            <td><input type="text" v-model="age"/></td>
+        </tr>
+    </table>
+    <tab-component-2 v-bind:my-age="age" v-bind:my-name="name"></tab-component-2>
+</div>
+
+
+<template id="tab-template-2">
+    <table>
+        <tr>
+            <th colspan="3">子组件数据</th>
+        </tr>
+        <tr>
+            <td>my name</td>
+            <td>{{ myName }}</td>
+            <td><input type="text" v-model="myName"/></td>
+        </tr>
+        <tr>
+            <td>my age</td>
+            <td>{{ myAge }}</td>
+            <td><input type="text" v-model="myAge"/></td>
+        </tr>
+    </table>
+</template>
+
+<script>
+    new Vue({
+        el: '#app-8',
+        data: {
+            name: 'shun-2',
+            age: 230
+        },
+        components: {
+            'tab-component-2': {
+                props: ['myName', 'myAge'],
+                template: '#tab-template-2'
+            }
+        }
+    });
+</script>
+
+
+<!--子组件修改父组件-->
+<div id="app-9">
+    <p>{{total}}</p>
+    <btn-add v-on:increment="incrementTotal"></btn-add>
+    <btn-add v-on:increment="incrementTotal"></btn-add>
+</div>
+<template id="btn-add-template">
+    <button v-on:click="increment">{{count}}</button>
+</template>
+
+<script>
+    Vue.component('btn-add', {
+        template: '#btn-add-template',
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            increment: function () {
+                this.count = this.count + 1;
+                this.$emit('increment')
+            }
+        }
+    });
+    new Vue({
+        el: '#app-9',
+        data: {
+            total: 0
+        },
+        methods: {
+            incrementTotal: function () {
+                this.total += 1
+            }
+        }
+    });
+</script>
+
+<template id="slot-template-1">
+    <div>
+        <h2>This is a component!</h2>
+        <slot>如果没有分发内容，则显示slot中的内容</slot>
+        <p>Say something...</p>
+    </div>
+</template>
+<div id="app-10">
+    <slot-component-1>
+        <h1>Hello Vue.js</h1>
+    </slot-component-1>
+    <br/>
+    <slot-component-1>
+    </slot-component-1>
+</div>
+
+<script>
+    Vue.component('slot-component-1', {
+        template: '#slot-template-1'
+    });
+    new Vue({
+        el: '#app-10'
+    });
+</script>
+
+</body>
+</html>
+
+

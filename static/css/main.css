@@ -1,0 +1,95 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: black;
+    height: 40px;
+    position: relative;
+    font-size: 18px;
+}
+
+.m-nva-title {
+    color: azure;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*
+ transform:translate(0,-50%);
+ 位移相对于自身分别是x,y轴。
+*/
+.m-nav-login {
+    color: azure;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.m-login-dialog {
+    display: none;
+    width: 400px;
+    height: 200px;
+    background: #f9f9f9;
+    padding: 0px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /*相对自身位移*/
+    margin: -100px 0 0 -200px;
+    border-radius: 4px;
+    /*z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
+    z-index: 1024;
+}
+
+.m-login-dialog-title {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+}
+
+.m-login-dialog-body {
+    padding: 30px 0 0 50px;
+}
+
+.m-login-dialog-body p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.m-login-dialog-body input.text {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.m-login-dialog-body input.btn {
+    width: 70px;
+    padding: 6px;
+    border: 1px solid #ddd;
+    margin-left: 41px;
+    cursor: pointer;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #444;
+    z-index: 1000;
+    opacity: 0.9;
+    display: none;
+}
