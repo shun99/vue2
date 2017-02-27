@@ -34,7 +34,10 @@
      });
  </script>
 ```
-使用子组件时通过  v-on:自组件方法="父组件方法"  的形式指定子组件要调用父组件的什么方法。
+使用子组件时通过
+v-on:自组件方法="父组件方法"     指定子组件要调用父组件的什么方法。
+
+v-bind:自组件数据="父组件数据"   将子组件数据与父组件数据建立连接
 ```
  <div id="app">
      <modal-dialog v-bind:show="showDialog" v-on:close="closeDialog">

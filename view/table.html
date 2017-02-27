@@ -7,24 +7,9 @@
 </head>
 <body>
 <div id="app">
-    <fieldset>
-        <legend>
-            Create New Person
-        </legend>
-        <div><label>Name:</label><input type="text" v-model="newPeople.name"/></div>
-        <div><label>age:</label><input type="text" v-model="newPeople.age"/></div>
-        <div class="form-group">
-            <label>Sex:</label>
-            <select v-model="newPeople.sex">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-        </div>
-        <div>
-            <label></label>
-            <button @click="createPerson">create</button>
-        </div>
-    </fieldset>
+    <table-component v-bind:people="newPeople" v-on:add="createPerson">
+
+    </table-component>
     <table>
         <thead>
         <tr>
@@ -47,8 +32,39 @@
         </tbody>
     </table>
 </div>
+
+<template id="table-template">
+    <fieldset>
+        <legend>
+            Create New Person
+        </legend>
+        <div><label>Name:</label><input type="text" v-model="people.name"/></div>
+        <div><label>age:</label><input type="text" v-model="people.age"/></div>
+        <div class="form-group">
+            <label>Sex:</label>
+            <select v-model="people.sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+        <div>
+            <label></label>
+            <button @click="add">create</button>
+        </div>
+    </fieldset>
+</template>
+
 <script src="../static/js/vue.js"></script>
 <script>
+    Vue.component('table-component', {
+        props: ['people'],
+        template: '#table-template',
+        methods: {
+            add: function () {
+                this.$emit('add')
+            }
+        }
+    });
     new Vue({
         el: '#app',
         data: {
