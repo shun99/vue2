@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d904ea6a-b9ec-4301-928f-acf08b2ed16f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/step2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/step3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="vue2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="step2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="step2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/step2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="531">
@@ -47,11 +46,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="step3.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/step3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="118" column="33" selection-start-line="116" selection-start-column="17" selection-end-line="118" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="40" column="6" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="6" />
+            <state relative-caret-position="486">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -81,9 +90,10 @@
         <option value="$PROJECT_DIR$/view/tableDialog.html" />
         <option value="$PROJECT_DIR$/view/tabledialog.html" />
         <option value="$PROJECT_DIR$/READEME.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/view/step1.html" />
         <option value="$PROJECT_DIR$/view/step2.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/view/step3.html" />
       </list>
     </option>
   </component>
@@ -192,10 +202,7 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.step2.html">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/index.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.step3.html">
     <configuration default="false" name="dialog.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/dialog.html">
       <method />
     </configuration>
@@ -206,6 +213,9 @@
       <method />
     </configuration>
     <configuration default="false" name="step2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/step2.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="step3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/step3.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -262,19 +272,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.dialog.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.table.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.step1.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.step2.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.dialog.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.table.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.step1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.step2.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.step3.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.step2.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.step1.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.table.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.dialog.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.step3.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.step2.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.step1.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.table.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.dialog.html" />
       </list>
     </recent_temporary>
   </component>
@@ -293,12 +303,12 @@
       <updated>1487820090718</updated>
       <workItem from="1487820092899" duration="2596000" />
       <workItem from="1487834297719" duration="2000" />
-      <workItem from="1487834304672" duration="33386000" />
+      <workItem from="1487834304672" duration="34438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35984000" />
+    <option name="totallyTimeSpent" value="37036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -459,14 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/step1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -479,6 +481,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
           <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/step3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="118" column="33" selection-start-line="116" selection-start-column="17" selection-end-line="118" selection-end-column="33" />
           <folding />
         </state>
       </provider>
