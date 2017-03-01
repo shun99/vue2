@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/step.css">
+</head>
+<body>
+<div id="register">
+    <div class="container">
+
+    </div>
+    <div class="container">
+        <div class="form-group">
+            <label>电子邮箱</label>
+            <input type="text" v-model="registerModel.email"/>
+        </div>
+        <div class="form-group">
+            <label>密码</label>
+            <input type="text" v-model="registerModel.password"/>
+        </div>
+        <div class="form-group">
+            <label>确认密码</label>
+            <input type="text" v-model="registerModel.confirmPassword"/>
+        </div>
+        <div class="form-group">
+            <label></label>
+            <button @click="register">注册</button>
+            <span>{{msg}}</span>
+        </div>
+    </div>
+</div>
+<script src="../static/js/vue.js"></script>
+<script src="../static/js/vue-resource.min.js"></script>
+<script>
+    Vue.http.options.emulateJSON = true;
+    new Vue({
+        el: '#register',
+        data: {
+            registerModel: {
+                email: '',
+                password: '',
+                confirmPassword: ''
+            },
+            registerUrl: 'http://211.149.193.19:8100/api/Account/Register',
+            msg: ''
+        },
+        /**
+         * 当使用vue-resource发送注册的POST请求时，Fiddler捕获到了2次请求，
+         * 第1次是由浏览器发送的OPTIONS预请求，第2次才是实际的POST请求。
+         * 这和使用$.ajax时是不一样的，因为$.ajax会将非GET请求的Content-Type
+         * 设置为application/x-www-form-urlencoded，
+         * 而vue-resource发送POST请求的Content-Type为application/json;charset=UTF-8。
+         */
+        methods: {
+            register: function () {
+                this.$http.post(this.registerUrl, this.registerModel)
+                        .then(response=> {
+                            this.msg = '注册成功';
+                        })
+                        .catch(response=> {
+                            this.msg = response.json;
+                        });
+            }
+
+
+        }
+    });
+</script>
+</body>
+</html>

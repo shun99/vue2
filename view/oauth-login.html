@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/step.css">
+</head>
+<body>
+<div id="app">
+    <div class="container text-center">
+        <span id="message">{{ msg }}</span>
+    </div>
+    <div class="container">
+        <div class="account-info">
+            <span v-if="userName">{{ userName }} | <a href="#" @click="logout">注销</a></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>用户名</label><input type="text" v-model="loginModel.username">
+    </div>
+    <div class="form-group">
+        <label>密码</label><input type="text" v-model="loginModel.password">
+    </div>
+    <div>
+        <label></label>
+        <button @click="login">登入</button>
+    </div>
+    <div class="splitter"></div>
+    <div class="container text-center">
+        <div>
+            <button @click="callApi">调用API</button>
+        </div>
+        <div class="result">
+            API调用结果：{{ result}}
+        </div>
+    </div>
+</div>
+<script src="../static/js/vue.js"></script>
+<script src="../static/js/vue-resource.min.js"></script>
+<script>
+    Vue.http.options.emulateJSON = true;
+//    Vue.http.options.root = 'http://211.149.193.19:8100';
+
+    new Vue({
+        el: '#app',
+        data: {
+            loginUrl: 'http://211.149.193.19:8100/token',
+            logoutUrl: 'http://211.149.193.19:8100/api/Account/Logout',
+            apiUrl: 'http://211.149.193.19:8100/api/Values',
+            loginModel: {
+                username: '',
+                password: '',
+                grant_type: 'password'
+            },
+            msg: '',
+            userName: '',
+            result: ''
+        },
+        mounted: function () {
+            this.$nextTick(function () {
+                // 代码保证 this.$el 在 document 中
+                this.userName = sessionStorage.getItem('userName');
+            })
+        },
+        methods: {
+            login: function () {
+                this.$http.post(this.loginUrl, this.loginModel)
+                        .then(response=> {
+                            let body = response.body;
+                            this.msg = '登录成功！';
+                            this.userName = body.userName;
+                            sessionStorage.setItem('accessToken', body.access_token);
+                            sessionStorage.setItem('userName', body.userName);
+                        })
+                        .catch(this.requestError);
+            },
+            logout: function () {
+                this.$http.post(this.logoutUrl)
+                        .then(response=> {
+                            this.msg = '注销成功！';
+                            this.userName = '';
+                            this.loginModel.username = '';
+                            this.loginModel.password = '';
+                            sessionStorage.removeItem('accessToken');
+                            sessionStorage.removeItem('userName');
+                        })
+                        .catch(this.requestError);
+            },
+            callApi: function () {
+                let headers = {};
+                headers.Authorization = 'Bearer ' + sessionStorage.getItem('accessToken');
+                headers.Origin = null;
+                this.$http.get(this.apiUrl, {headers: headers})
+                        .then(response => {
+                            this.result = response.body;
+                        })
+                        .catch(this.requestError);
+            },
+            requestError: function (response) {
+                this.msg = response.json();
+            },
+        }
+    });
+</script>
+</body>
+</html>

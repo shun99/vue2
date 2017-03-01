@@ -77,3 +77,24 @@ Content-Length:507
 Content-Type:text/javascript; charset=utf-8
 ```
 CORS 与 JSONP都需要服务端做特殊处理去支持。且返回的数据格式不一样
+
+## OAuth登入
+
+登入后，返回的token，userName保存在session，
+```
+sessionStorage.setItem('accessToken', body.access_token);
+sessionStorage.getItem('userName');
+```
+下次请求网络时取出来
+```
+headers.Authorization = 'Bearer ' + sessionStorage.getItem('accessToken');
+```
+在进入界面时，免登入
+```
+sessionStorage.getItem('userName');
+```
+退出时，清除保存在sessionStorage的userName和accessToken
+```
+sessionStorage.removeItem('accessToken');
+sessionStorage.removeItem('userName');
+```
