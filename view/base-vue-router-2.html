@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-view></router-view>
+</div>
+<template id="home">
+    <div>
+        <div>{{msg}}</div>
+        <router-link to="/home/news">Home.news</router-link>
+        <router-link to="/home/message">Home.message</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+<template id="about">
+    <div>{{msg}}</div>
+</template>
+<template id="message">
+    <div>{{msg}}</div>
+</template>
+<template id="news">
+    <div>{{msg}}</div>
+</template>
+
+<script src="../static/js/vue.js"></script>
+<script src="../static/js/vue-router.js"></script>
+<script>
+    const Home = {
+        template: '#home',
+        data(){//es6
+            return {
+                msg: 'this is Home'
+            }
+        }
+    };
+    const About = {
+        template: '#about',
+        data: function () {
+            return {
+                msg: 'this is About'
+            }
+        }
+    };
+    const Message = {
+        template: '#message',
+        data: function () {
+            return {
+                msg: 'this is news'
+            }
+        }
+    };
+    const News = {
+        template: '#news',
+        data: function () {
+            return {
+                msg: 'this is message'
+            }
+        }
+    };
+    const routes = [
+        {
+            path: '/home/',
+            component: Home,
+            children: [
+                {path: '', component: Message},
+                {path: 'message', component: Message},
+                {path: 'news', component: News},
+            ]
+        },
+        {path: '/about', component: About},
+    ];
+    const router = new VueRouter({
+        routes // （缩写）相当于 routes: routes
+    });
+    //刚进入应用就渲染某个路由组件
+    router.push('/home');
+    const app = new Vue({
+        el: '#app',
+        router
+    });
+</script>
+
+
+</body>
+</html>

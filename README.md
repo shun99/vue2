@@ -133,5 +133,44 @@ sessionStorage.removeItem('userName');
 router.push('/goods')
 ```
 router.push方法就是用来动态导航到不同的链接的。它会向history栈添加一个新的记录，点击<router-link :to="...">等同于调用router.push(...)。
+### 动态匹配路由 watch
+例如从 /user/foo 导航到 user/bar，原来的组件实例会被复用。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。不过，这也意味着组件的生命周期钩子不会再被调用。
+复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch（监测变化） $route 对象(在定义组件对象的时候)：
+```
+const User = {
+  template: '...',
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+    }
+  }
+}
+```
+### 嵌套
+```
+<template id="home">
+    <div>
+        <div>{{msg}}</div>
+        <router-link to="/home/news">Home.news</router-link>
+        <router-link to="/home/message">Home.message</router-link>
+        <router-view></router-view>
+    </div>
+</template>
+
+const routes = [
+        {
+            path: '/home/',
+            component: Home,
+            children: [
+                {path: '', component: Message},
+                {path: 'message', component: Message},
+                {path: 'news', component: News},
+            ]
+        },
+        {path: '/about', component: About},
+    ];
+```
+- children下path不要再添加'/'
+- 组件定义出router-link元素的to属性路径写全
 
 

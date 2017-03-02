@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <router-link to="/user/foo/post/123">Go to Foo</router-link>
+        <router-link to="/user/bar/post/456">Go to Bar</router-link>
+    </p>
+    <router-view></router-view>
+</div>
+<template id='user'>
+    <p>User:{{ $route.params.id }},Post:{{$route.params.post_id}}</p>
+</template>
+
+<script src="../static/js/vue.js"></script>
+<script src="../static/js/vue-router.js"></script>
+<script>
+    // 1. 定义组件。
+    const User = {
+        template:'#user',
+        watch:{
+            '$route'(to,from){
+                console.log('从'+from.params.id+'到'+to.params.id);
+            }
+        }
+    };
+    // 2. 创建路由实例 (可设置多段路径参数)
+    const router = new VueRouter({
+        routes:[
+            { path:'/user/:id/post/:post_id',component:User }
+        ]
+    });
+    //3. 创建和挂载根实例
+    const app = new Vue({ router:router }).$mount('#app');
+</script>
+
+
+</body>
+</html>
