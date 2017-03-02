@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d904ea6a-b9ec-4301-928f-acf08b2ed16f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/oauth-login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/oauth-register.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/vue-router.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/view/base-vue-router.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
@@ -28,31 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="oauth-register.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/oauth-register.html">
+      <file leaf-file-name="base-vue-router.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/base-vue-router.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-593">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            <state relative-caret-position="183">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="oauth-login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/oauth-login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="84" column="66" selection-start-line="83" selection-start-column="26" selection-end-line="84" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="295">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,6 +83,7 @@
         <option value="$PROJECT_DIR$/view/oauth-register.html" />
         <option value="$PROJECT_DIR$/view/oauth-login.html" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/view/base-vue-router.html" />
       </list>
     </option>
   </component>
@@ -160,7 +151,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vue2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -181,6 +190,7 @@
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="FullScreen" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -190,10 +200,7 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.oauth-login.html">
-    <configuration default="false" name="step3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/step3.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.base-vue-router.html">
     <configuration default="false" name="ajax.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/ajax.html">
       <method />
     </configuration>
@@ -204,6 +211,9 @@
       <method />
     </configuration>
     <configuration default="false" name="oauth-login.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/oauth-login.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="base-vue-router.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/vue2/view/base-vue-router.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -260,19 +270,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.step3.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.ajax.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.vue-resource.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.oauth-register.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.oauth-login.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.ajax.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.vue-resource.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.oauth-register.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.oauth-login.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.base-vue-router.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.oauth-login.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.oauth-register.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.vue-resource.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.ajax.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.step3.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.base-vue-router.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.oauth-login.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.oauth-register.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.vue-resource.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.ajax.html" />
       </list>
     </recent_temporary>
   </component>
@@ -292,12 +302,12 @@
       <workItem from="1487820092899" duration="2596000" />
       <workItem from="1487834297719" duration="2000" />
       <workItem from="1487834304672" duration="34438000" />
-      <workItem from="1488253144674" duration="13934000" />
+      <workItem from="1488253144674" duration="17348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50970000" />
+    <option name="totallyTimeSpent" value="54384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -558,14 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/oauth-register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-593">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/oauth-login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -574,10 +576,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/view/oauth-register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/vue-router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="295">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/base-vue-router.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <folding />
         </state>
       </provider>

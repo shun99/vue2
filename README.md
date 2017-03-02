@@ -98,3 +98,40 @@ sessionStorage.getItem('userName');
 sessionStorage.removeItem('accessToken');
 sessionStorage.removeItem('userName');
 ```
+
+## vue-router2
+### 步骤
+- 定义组件
+- 定义路由
+- 创建 router 实例，然后传 `routes` 配置
+- 创建和挂载根实例。
+
+具体参考示base-vue-router
+
+### 怎么刚进入应用就渲染某个路由组件
+刚进入应用都是进入到“/”这个路由的，如果想直接进入到“/home”怎么办，这里提供两种方法。一种是利用重定向，另一种是利用vue-router的导航式编程。
+#### 重定向
+```
+ const routes = [
+        {path: '/home', component: Home},
+        {path: '/about', component: About},
+        {path: '/', component: Home}
+    ];
+```
+或者
+```
+ const routes = [
+        {path: '/home', component: Home},
+        {path: '/about', component: About},
+        {path: '/', redirect: '/home'}
+    ];
+```
+#### 导航式编程
+利用vue-router的导航式编程的router.push方法也可以实现上面的需求。
+```
+// 在创建vue实例并挂载后调用
+router.push('/goods')
+```
+router.push方法就是用来动态导航到不同的链接的。它会向history栈添加一个新的记录，点击<router-link :to="...">等同于调用router.push(...)。
+
+
